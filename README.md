@@ -15,7 +15,6 @@ MazeSolver is a python script that finds the shortest path between Source and De
 
 The code used is based on [**Breadth First Search**](https://en.wikipedia.org/wiki/Breadth-first_search) and [**Lee Algorithm**](https://www.freecodecamp.org/news/lees-algorithm-explained-with-examples/). The algorithm is quite inefficient, especially in terms of space-complexity but it serves well in this case as it always returns the shortest path.
 
-This script uses 
 
 ## Installation
 
