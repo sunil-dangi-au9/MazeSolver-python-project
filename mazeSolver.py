@@ -140,7 +140,8 @@ if __name__ == '__main__':
     N = len(maze[0])
 
     # If no destination: default = (M,N)
-    if ((args.x == 0 and args.y == 0) or ((args.x >= M) or (args.y > N))):
+    if ((args.x == 0 and args.y == 0) or (args.x <= 0 and args.y <= 0)
+            or ((args.x >= M) or (args.y > N))):
         x = (M - 1)
         y = (N - 1)
     else:
