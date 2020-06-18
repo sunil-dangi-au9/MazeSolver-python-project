@@ -123,8 +123,8 @@ if __name__ == '__main__':
                         help="Output file name")
     parser.add_argument('--i', type=int, default=0, help='origin col num')
     parser.add_argument('--j', type=int, default=0, help='origin row num')
-    parser.add_argument('--x', type=int, default=1, help='dest col num')
-    parser.add_argument('--y', type=int, default=1, help='dest row num')
+    parser.add_argument('--x', type=int, default=0, help='dest col num')
+    parser.add_argument('--y', type=int, default=0, help='dest row num')
 
     args = parser.parse_args()
 
@@ -139,4 +139,12 @@ if __name__ == '__main__':
     M = len(maze)
     N = len(maze[0])
 
-    mazeSolver(maze, args.j, args.i, args.y, args.x)
+    # If no destination: default = (M,N)
+    if ((args.x == 0 and args.y == 0) or ((args.x >= M) or (args.y > N))):
+        x = (M - 1)
+        y = (N - 1)
+    else:
+        x = args.y
+        y = args.x
+
+    mazeSolver(maze, args.j, args.i, x, y)
