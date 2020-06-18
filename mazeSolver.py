@@ -117,17 +117,19 @@ if __name__ == '__main__':
 
     # Taking file, origin and destination values form command line
     parser = argparse.ArgumentParser()
-    parser.add_argument("input", help="Input file name")
-    parser.add_argument("output", help="Output file name")
+    parser.add_argument('--ip', type=str, default='ip1.txt',
+                        help="Input file name")
+    parser.add_argument('--op', type=str, default='output.txt',
+                        help="Output file name")
     parser.add_argument('--i', type=int, default=0, help='origin col num')
     parser.add_argument('--j', type=int, default=0, help='origin row num')
-    parser.add_argument('--x', type=int, default=7, help='dest col num')
-    parser.add_argument('--y', type=int, default=5, help='dest row num')
+    parser.add_argument('--x', type=int, default=1, help='dest col num')
+    parser.add_argument('--y', type=int, default=1, help='dest row num')
 
     args = parser.parse_args()
 
-    f = open(args.input, 'r')  # input file
-    f1 = open(args.output, 'w')  # output file
+    f = open(args.ip, 'r')  # input file
+    f1 = open(args.op, 'w')  # output file
 
     # Generating maze from input file
     for data in f.readlines():
